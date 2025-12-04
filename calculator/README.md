@@ -1,8 +1,10 @@
 Simple Calculator in Go
 
-This is a **basic calculator** implemented in **Go** that can perform operations with **two numbers only**. It supports addition, subtraction, multiplication, and division, with a simple **menu-driven interface**.
+This is a **basic calculator** implemented in **Go** that performs arithmetic operations with **two numbers only**. It supports **addition, subtraction, multiplication, and division** through a **menu-driven interface**.
 
-Features
+---
+
+## Features
 
 - ✅ **Addition**
 - ✅ **Subtraction**
@@ -11,10 +13,12 @@ Features
 - ✅ **Change numbers anytime**
 - ✅ **Simple and interactive menu**
 
-How it works
+---
+
+## How It Works
 
 1. The program asks you to **enter two numbers** (`x` and `y`).
-2. Shows a **menu of options**:
+2. It shows a **menu of operations**:
 
 ```
 1 - Sum | 2 - Subtraction | 3 - Multiplication | 4 - Division | 5 - Change Numbers | 0 - Exit
@@ -25,34 +29,90 @@ How it works
 5. You can **change the numbers** anytime by selecting option `5`.
 6. Exit the program by selecting `0`.
 
-Example Usage
+---
+
+## Example Usage
 
 ```bash
-Tap a number(x): 10
-Tap a number(y): 5
+Enter a number (x): 10
+Enter a number (y): 5
 
 Welcome! Choose an option:
 1 - Sum | 2 - Subtraction | 3 - Multiplication | 4 - Division | 5 - Change Numbers | 0 - Exit
 Enter an option: 1
-The sum for 10.0 and 5.0 is 15.0
+The sum of 10.0 and 5.0 is 15.0
 
 Enter an option: 4
-The division for 10.0 and 5.0 is 2.0
+The division of 10.0 by 5.0 is 2.0
 ```
 
-Notes
+---
+
+## Notes
 
 - **Division by zero is not allowed**. The program will show an error if you try to divide by 0.
 - The calculator **only works with two numbers at a time**.
-- Input validation is included to **handle wrong entries** gracefully.
+- Input validation is included to **handle invalid entries gracefully**.
 
-Run the Program
+---
 
-1. Clone the repository or copy the file.
-2. Run the program with Go:
+## Run the Program
+
+### **Option 1: Run with Go**
+
+1. Clone the repository or copy the files.
+2. Run the program:
 
 ```bash
-go run calculator.go
+go run calculator.go operations.go
 ```
 
 3. Follow the interactive prompts and enjoy your calculations! 🎉
+
+---
+
+### **Option 2: Build and Run Executable**
+
+1. Build the executable:
+
+```bash
+go build -o calculator_exe calculator.go operations.go
+```
+
+2. Run the executable:
+
+```bash
+./calculator_exe   # Linux / macOS
+calculator_exe.exe # Windows
+```
+
+---
+
+## Run Tests
+
+The calculator logic is separated into **pure functions** (`Add`, `Subtract`, `Multiply`, `Divide`) and is fully testable.
+
+1. Run tests with Go:
+
+```bash
+go test ./...
+```
+
+2. If you are using **Ginkgo/Gomega**:
+
+```bash
+go run github.com/onsi/ginkgo/v2/ginkgo -v
+```
+
+---
+
+## Folder Structure
+
+```
+calculator/
+├── calculator.go           # Interactive menu
+├── operations.go           # Calculator functions (Add, Subtract, Multiply, Divide)
+├── calculator_test.go      # Unit tests
+├── calculator_suite_test.go# Ginkgo setup
+└── README.md               # Project documentation
+```
