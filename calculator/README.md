@@ -1,4 +1,4 @@
-Simple Calculator in Go
+<h1> Simple Calculator in Go </h1>
 
 This is a **basic calculator** implemented in **Go** that performs arithmetic operations with **two numbers only**. It supports **addition, subtraction, multiplication, and division** through a **menu-driven interface**.
 
